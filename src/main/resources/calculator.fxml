@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.calculator.CalculatorController">
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.calculator.CalculatorController">
    <children>
       <TextField fx:id="display" alignment="CENTER_RIGHT" editable="false" prefHeight="80.0" styleClass="display" text="0">
          <VBox.margin>
@@ -31,34 +31,87 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          
-         <!-- Row 0: Clear and operations -->
-         <Button fx:id="btnClear" mnemonicParsing="false" onAction="#clearAll" prefHeight="60.0" prefWidth="80.0" styleClass="btn-clear" text="C" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-         <Button fx:id="btnPlusMinus" mnemonicParsing="false" onAction="#toggleSign" prefHeight="60.0" prefWidth="80.0" styleClass="btn-operator" text="±" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-         <Button fx:id="btnPercent" mnemonicParsing="false" onAction="#percent" prefHeight="60.0" prefWidth="80.0" styleClass="btn-operator" text="%" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-         <Button fx:id="btnDivide" mnemonicParsing="false" onAction="#setOperator" prefHeight="60.0" prefWidth="80.0" styleClass="btn-operator" text="÷" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+         <Button fx:id="btnClear" mnemonicParsing="false" onAction="#clearAll" prefHeight="60.0" prefWidth="80.0" styleClass="btn-clear" text="C">
+            <GridPane.columnIndex>0</GridPane.columnIndex>
+            <GridPane.rowIndex>0</GridPane.rowIndex>
+         </Button>
+         <Button fx:id="btnPlusMinus" mnemonicParsing="false" onAction="#toggleSign" prefHeight="60.0" prefWidth="80.0" styleClass="btn-operator" text="+/-">
+            <GridPane.columnIndex>1</GridPane.columnIndex>
+            <GridPane.rowIndex>0</GridPane.rowIndex>
+         </Button>
+         <Button fx:id="btnPercent" mnemonicParsing="false" onAction="#percent" prefHeight="60.0" prefWidth="80.0" styleClass="btn-operator" text="PCT">
+            <GridPane.columnIndex>2</GridPane.columnIndex>
+            <GridPane.rowIndex>0</GridPane.rowIndex>
+         </Button>
+         <Button fx:id="btnDivide" mnemonicParsing="false" onAction="#setOperator" prefHeight="60.0" prefWidth="80.0" styleClass="btn-operator" text="/">
+            <GridPane.columnIndex>3</GridPane.columnIndex>
+            <GridPane.rowIndex>0</GridPane.rowIndex>
+         </Button>
          
-         <!-- Row 1: Numbers 7-9 and multiply -->
-         <Button fx:id="btn7" mnemonicParsing="false" onAction="#numberPressed" prefHeight="60.0" prefWidth="80.0" styleClass="btn-number" text="7" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-         <Button fx:id="btn8" mnemonicParsing="false" onAction="#numberPressed" prefHeight="60.0" prefWidth="80.0" styleClass="btn-number" text="8" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-         <Button fx:id="btn9" mnemonicParsing="false" onAction="#numberPressed" prefHeight="60.0" prefWidth="80.0" styleClass="btn-number" text="9" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-         <Button fx:id="btnMultiply" mnemonicParsing="false" onAction="#setOperator" prefHeight="60.0" prefWidth="80.0" styleClass="btn-operator" text="×" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+         <Button fx:id="btn7" mnemonicParsing="false" onAction="#numberPressed" prefHeight="60.0" prefWidth="80.0" styleClass="btn-number" text="7">
+            <GridPane.columnIndex>0</GridPane.columnIndex>
+            <GridPane.rowIndex>1</GridPane.rowIndex>
+         </Button>
+         <Button fx:id="btn8" mnemonicParsing="false" onAction="#numberPressed" prefHeight="60.0" prefWidth="80.0" styleClass="btn-number" text="8">
+            <GridPane.columnIndex>1</GridPane.columnIndex>
+            <GridPane.rowIndex>1</GridPane.rowIndex>
+         </Button>
+         <Button fx:id="btn9" mnemonicParsing="false" onAction="#numberPressed" prefHeight="60.0" prefWidth="80.0" styleClass="btn-number" text="9">
+            <GridPane.columnIndex>2</GridPane.columnIndex>
+            <GridPane.rowIndex>1</GridPane.rowIndex>
+         </Button>
+         <Button fx:id="btnMultiply" mnemonicParsing="false" onAction="#setOperator" prefHeight="60.0" prefWidth="80.0" styleClass="btn-operator" text="*">
+            <GridPane.columnIndex>3</GridPane.columnIndex>
+            <GridPane.rowIndex>1</GridPane.rowIndex>
+         </Button>
          
-         <!-- Row 2: Numbers 4-6 and subtract -->
-         <Button fx:id="btn4" mnemonicParsing="false" onAction="#numberPressed" prefHeight="60.0" prefWidth="80.0" styleClass="btn-number" text="4" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-         <Button fx:id="btn5" mnemonicParsing="false" onAction="#numberPressed" prefHeight="60.0" prefWidth="80.0" styleClass="btn-number" text="5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-         <Button fx:id="btn6" mnemonicParsing="false" onAction="#numberPressed" prefHeight="60.0" prefWidth="80.0" styleClass="btn-number" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-         <Button fx:id="btnSubtract" mnemonicParsing="false" onAction="#setOperator" prefHeight="60.0" prefWidth="80.0" styleClass="btn-operator" text="−" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+         <Button fx:id="btn4" mnemonicParsing="false" onAction="#numberPressed" prefHeight="60.0" prefWidth="80.0" styleClass="btn-number" text="4">
+            <GridPane.columnIndex>0</GridPane.columnIndex>
+            <GridPane.rowIndex>2</GridPane.rowIndex>
+         </Button>
+         <Button fx:id="btn5" mnemonicParsing="false" onAction="#numberPressed" prefHeight="60.0" prefWidth="80.0" styleClass="btn-number" text="5">
+            <GridPane.columnIndex>1</GridPane.columnIndex>
+            <GridPane.rowIndex>2</GridPane.rowIndex>
+         </Button>
+         <Button fx:id="btn6" mnemonicParsing="false" onAction="#numberPressed" prefHeight="60.0" prefWidth="80.0" styleClass="btn-number" text="6">
+            <GridPane.columnIndex>2</GridPane.columnIndex>
+            <GridPane.rowIndex>2</GridPane.rowIndex>
+         </Button>
+         <Button fx:id="btnSubtract" mnemonicParsing="false" onAction="#setOperator" prefHeight="60.0" prefWidth="80.0" styleClass="btn-operator" text="-">
+            <GridPane.columnIndex>3</GridPane.columnIndex>
+            <GridPane.rowIndex>2</GridPane.rowIndex>
+         </Button>
          
-         <!-- Row 3: Numbers 1-3 and add -->
-         <Button fx:id="btn1" mnemonicParsing="false" onAction="#numberPressed" prefHeight="60.0" prefWidth="80.0" styleClass="btn-number" text="1" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-         <Button fx:id="btn2" mnemonicParsing="false" onAction="#numberPressed" prefHeight="60.0" prefWidth="80.0" styleClass="btn-number" text="2" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-         <Button fx:id="btn3" mnemonicParsing="false" onAction="#numberPressed" prefHeight="60.0" prefWidth="80.0" styleClass="btn-number" text="3" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-         <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#setOperator" prefHeight="60.0" prefWidth="80.0" styleClass="btn-operator" text="+" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+         <Button fx:id="btn1" mnemonicParsing="false" onAction="#numberPressed" prefHeight="60.0" prefWidth="80.0" styleClass="btn-number" text="1">
+            <GridPane.columnIndex>0</GridPane.columnIndex>
+            <GridPane.rowIndex>3</GridPane.rowIndex>
+         </Button>
+         <Button fx:id="btn2" mnemonicParsing="false" onAction="#numberPressed" prefHeight="60.0" prefWidth="80.0" styleClass="btn-number" text="2">
+            <GridPane.columnIndex>1</GridPane.columnIndex>
+            <GridPane.rowIndex>3</GridPane.rowIndex>
+         </Button>
+         <Button fx:id="btn3" mnemonicParsing="false" onAction="#numberPressed" prefHeight="60.0" prefWidth="80.0" styleClass="btn-number" text="3">
+            <GridPane.columnIndex>2</GridPane.columnIndex>
+            <GridPane.rowIndex>3</GridPane.rowIndex>
+         </Button>
+         <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#setOperator" prefHeight="60.0" prefWidth="80.0" styleClass="btn-operator" text="+">
+            <GridPane.columnIndex>3</GridPane.columnIndex>
+            <GridPane.rowIndex>3</GridPane.rowIndex>
+         </Button>
          
-         <!-- Row 4: Zero, decimal, and equals -->
-         <Button fx:id="btn0" mnemonicParsing="false" onAction="#numberPressed" prefHeight="60.0" prefWidth="80.0" styleClass="btn-number" text="0" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="4" />
-         <Button fx:id="btnDecimal" mnemonicParsing="false" onAction="#decimalPressed" prefHeight="60.0" prefWidth="80.0" styleClass="btn-number" text="." GridPane.columnIndex="2" GridPane.rowIndex="4" />
-         <Button fx:id="btnEquals" mnemonicParsing="false" onAction="#calculate" prefHeight="60.0" prefWidth="80.0" styleClass="btn-equals" text="=" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+         <Button fx:id="btn0" mnemonicParsing="false" onAction="#numberPressed" prefHeight="60.0" prefWidth="80.0" styleClass="btn-number" text="0">
+            <GridPane.columnIndex>0</GridPane.columnIndex>
+            <GridPane.columnSpan>2</GridPane.columnSpan>
+            <GridPane.rowIndex>4</GridPane.rowIndex>
+         </Button>
+         <Button fx:id="btnDecimal" mnemonicParsing="false" onAction="#decimalPressed" prefHeight="60.0" prefWidth="80.0" styleClass="btn-number" text=".">
+            <GridPane.columnIndex>2</GridPane.columnIndex>
+            <GridPane.rowIndex>4</GridPane.rowIndex>
+         </Button>
+         <Button fx:id="btnEquals" mnemonicParsing="false" onAction="#calculate" prefHeight="60.0" prefWidth="80.0" styleClass="btn-equals" text="=">
+            <GridPane.columnIndex>3</GridPane.columnIndex>
+            <GridPane.rowIndex>4</GridPane.rowIndex>
+         </Button>
          
          <VBox.margin>
             <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />

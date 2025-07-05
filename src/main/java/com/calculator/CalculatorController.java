@@ -68,13 +68,13 @@ public class CalculatorController {
             case "+":
                 result = firstOperand + secondOperand;
                 break;
-            case "−":
+            case "-":
                 result = firstOperand - secondOperand;
                 break;
-            case "×":
+            case "*":
                 result = firstOperand * secondOperand;
                 break;
-            case "÷":
+            case "/":
                 if (secondOperand != 0) {
                     result = firstOperand / secondOperand;
                 } else {
